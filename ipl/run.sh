@@ -1,0 +1,1 @@
+python run.py --lambda_f 1e-6 --data ml20m --model mf --save_flag mook --lr 1e-3 --wd 1e-2 --gamma 1.5 --trainer ipl --cuda 0

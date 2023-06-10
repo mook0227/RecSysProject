@@ -1,0 +1,1248 @@
+Namespace(cuda=0, data='ml20m', device=device(type='cuda'), gamma=1.5, lambda_f=0.0001, lr=0.0001, model='mf', save_flag='mook', trainer='ipl', wd=0.01)
+{'name': 'ProcessedDataset', 'path': 'data/ML20M/1', 'device': device(type='cuda'), 'split_ratio': [0.7, 0.1, 0.2], 'min_inter': 10, 'n_groups': 10, 'gamma': 1.826}
+{'name': 'ProcessedDataset', 'path': 'data/ML20M/1', 'device': device(type='cuda'), 'split_ratio': [0.7, 0.1, 0.2], 'min_inter': 10, 'n_groups': 10, 'gamma': 1.826}
+init dataset ProcessedDataset
+num of users 12970 num of items 6628 
+num of edges 1185647 num of training edges 827006
+{'name': 'MF', 'embedding_size': 64, 'device': device(type='cuda'), 'dataset': <dataset.ProcessedDataset object at 0x7f4180897690>}
+load model
+
+loading model from checkpoints/mook/MF_BPRTrainer_ml20m.pth...
+
+Can not load the pretrained model for IPL.
+{'name': 'IPLBPRTrainer', 'optimizer': 'Adam', 'n_epochs': 2000, 'batch_size': 512, 'dataloader_num_workers': 6, 'test_batch_size': 512, 'topks': [5, 10, 20], 'eval_fairk': 20, 'lr': 0.0001, 'l2_reg': 0.01, 'device': device(type='cuda'), 'lambda_f': 0.0001, 'gamma': 1.5, 'model_name': 'mf', 'save_flag': 'mook', 'dataset_name': 'ml20m', 'dataset': <dataset.ProcessedDataset object at 0x7f4180897690>, 'model': MF(
+  (user_embedding): Embedding(12970, 64)
+  (item_embedding): Embedding(6628, 64)
+)}
+n_gt 827006
+n_items 6628
+-------------------------------- before training ------------------------------
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Test result. Precision: 0.596%@5, 0.556%@10, 0.563%@20, Recall: 0.095%@5, 0.168%@10, 0.334%@20, NDCG: 0.613%@5, 0.596%@10, 0.631%@20, 
+-------------------------------------------------------------------------------
+BPR loss: 0.713759183883667, IPL loss: 0.00037134907324798405
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 0/2000, Loss: 0.714131, Time: 4.097s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.285%@5, 0.283%@10, 0.280%@20, Recall: 0.088%@5, 0.192%@10, 0.357%@20, NDCG: 0.296%@5, 0.321%@10, 0.367%@20, Time: 1.292s
+Best NDCG, save model to checkpoints/mook/MF_IPLBPRTrainer_ml20m_0.000100_0.010000_0.000100.pth
+BPR loss: 0.713678240776062, IPL loss: 0.0003713561163749546
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 1/2000, Loss: 0.714050, Time: 4.094s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.288%@5, 0.283%@10, 0.280%@20, Recall: 0.088%@5, 0.192%@10, 0.357%@20, NDCG: 0.298%@5, 0.321%@10, 0.367%@20, Time: 1.305s
+Best NDCG, save model to checkpoints/mook/MF_IPLBPRTrainer_ml20m_0.000100_0.010000_0.000100.pth
+BPR loss: 0.7138104438781738, IPL loss: 0.00037136327591724694
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 2/2000, Loss: 0.714182, Time: 4.299s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.288%@5, 0.281%@10, 0.281%@20, Recall: 0.088%@5, 0.188%@10, 0.357%@20, NDCG: 0.298%@5, 0.319%@10, 0.367%@20, Time: 1.339s
+BPR loss: 0.7134849429130554, IPL loss: 0.00037137040635570884
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 3/2000, Loss: 0.713856, Time: 4.041s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.288%@5, 0.281%@10, 0.280%@20, Recall: 0.088%@5, 0.188%@10, 0.357%@20, NDCG: 0.298%@5, 0.319%@10, 0.367%@20, Time: 1.317s
+BPR loss: 0.7135783433914185, IPL loss: 0.0003713775658980012
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 4/2000, Loss: 0.713950, Time: 4.061s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.288%@5, 0.281%@10, 0.280%@20, Recall: 0.088%@5, 0.188%@10, 0.357%@20, NDCG: 0.297%@5, 0.319%@10, 0.367%@20, Time: 1.342s
+BPR loss: 0.7133914828300476, IPL loss: 0.00037138466723263264
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 5/2000, Loss: 0.713763, Time: 4.103s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.288%@5, 0.281%@10, 0.280%@20, Recall: 0.088%@5, 0.188%@10, 0.356%@20, NDCG: 0.297%@5, 0.318%@10, 0.366%@20, Time: 1.329s
+BPR loss: 0.7133615016937256, IPL loss: 0.0003713917394634336
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 6/2000, Loss: 0.713733, Time: 4.130s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.288%@5, 0.283%@10, 0.279%@20, Recall: 0.088%@5, 0.190%@10, 0.349%@20, NDCG: 0.297%@5, 0.319%@10, 0.364%@20, Time: 1.311s
+BPR loss: 0.7131901979446411, IPL loss: 0.0003713988116942346
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 7/2000, Loss: 0.713562, Time: 4.195s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.288%@5, 0.283%@10, 0.279%@20, Recall: 0.088%@5, 0.190%@10, 0.349%@20, NDCG: 0.297%@5, 0.319%@10, 0.364%@20, Time: 1.336s
+BPR loss: 0.7131658792495728, IPL loss: 0.00037140591302886605
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 8/2000, Loss: 0.713537, Time: 4.157s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.288%@5, 0.283%@10, 0.280%@20, Recall: 0.088%@5, 0.189%@10, 0.350%@20, NDCG: 0.297%@5, 0.319%@10, 0.365%@20, Time: 1.408s
+BPR loss: 0.7132323980331421, IPL loss: 0.0003714129561558366
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 9/2000, Loss: 0.713604, Time: 4.330s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.288%@5, 0.283%@10, 0.280%@20, Recall: 0.088%@5, 0.189%@10, 0.350%@20, NDCG: 0.297%@5, 0.319%@10, 0.365%@20, Time: 1.330s
+BPR loss: 0.7129929065704346, IPL loss: 0.00037142002838663757
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 10/2000, Loss: 0.713364, Time: 4.263s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.291%@5, 0.285%@10, 0.279%@20, Recall: 0.089%@5, 0.196%@10, 0.350%@20, NDCG: 0.299%@5, 0.323%@10, 0.365%@20, Time: 1.309s
+Best NDCG, save model to checkpoints/mook/MF_IPLBPRTrainer_ml20m_0.000100_0.010000_0.000100.pth
+BPR loss: 0.7130762338638306, IPL loss: 0.00037142704240977764
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 11/2000, Loss: 0.713448, Time: 4.226s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.291%@5, 0.284%@10, 0.279%@20, Recall: 0.089%@5, 0.195%@10, 0.350%@20, NDCG: 0.299%@5, 0.322%@10, 0.364%@20, Time: 1.362s
+BPR loss: 0.7128486633300781, IPL loss: 0.00037143411464057863
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 12/2000, Loss: 0.713220, Time: 4.331s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.291%@5, 0.284%@10, 0.278%@20, Recall: 0.089%@5, 0.195%@10, 0.350%@20, NDCG: 0.299%@5, 0.321%@10, 0.364%@20, Time: 1.360s
+BPR loss: 0.7129016518592834, IPL loss: 0.0003714411286637187
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 13/2000, Loss: 0.713273, Time: 4.187s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.291%@5, 0.284%@10, 0.278%@20, Recall: 0.089%@5, 0.195%@10, 0.350%@20, NDCG: 0.299%@5, 0.321%@10, 0.364%@20, Time: 1.350s
+BPR loss: 0.7128488421440125, IPL loss: 0.0003714481426868588
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 14/2000, Loss: 0.713220, Time: 4.224s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.285%@5, 0.284%@10, 0.278%@20, Recall: 0.089%@5, 0.195%@10, 0.350%@20, NDCG: 0.295%@5, 0.321%@10, 0.364%@20, Time: 1.341s
+BPR loss: 0.7126954793930054, IPL loss: 0.00037145515670999885
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 15/2000, Loss: 0.713067, Time: 4.161s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.285%@5, 0.284%@10, 0.278%@20, Recall: 0.089%@5, 0.195%@10, 0.350%@20, NDCG: 0.295%@5, 0.321%@10, 0.363%@20, Time: 1.344s
+BPR loss: 0.712501585483551, IPL loss: 0.0003714621707331389
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 16/2000, Loss: 0.712873, Time: 4.143s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.283%@5, 0.284%@10, 0.276%@20, Recall: 0.088%@5, 0.195%@10, 0.349%@20, NDCG: 0.294%@5, 0.321%@10, 0.362%@20, Time: 1.331s
+BPR loss: 0.7126150727272034, IPL loss: 0.000371469184756279
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 17/2000, Loss: 0.712987, Time: 4.186s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.283%@5, 0.284%@10, 0.276%@20, Recall: 0.088%@5, 0.195%@10, 0.351%@20, NDCG: 0.294%@5, 0.321%@10, 0.363%@20, Time: 1.498s
+BPR loss: 0.7125245332717896, IPL loss: 0.00037147614057175815
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 18/2000, Loss: 0.712896, Time: 4.217s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.283%@5, 0.285%@10, 0.275%@20, Recall: 0.088%@5, 0.197%@10, 0.350%@20, NDCG: 0.294%@5, 0.322%@10, 0.362%@20, Time: 1.314s
+BPR loss: 0.7123568058013916, IPL loss: 0.00037148312549106777
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 19/2000, Loss: 0.712728, Time: 4.190s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.283%@5, 0.287%@10, 0.274%@20, Recall: 0.088%@5, 0.197%@10, 0.349%@20, NDCG: 0.294%@5, 0.323%@10, 0.362%@20, Time: 1.341s
+BPR loss: 0.7122732996940613, IPL loss: 0.0003714901104103774
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 20/2000, Loss: 0.712645, Time: 4.215s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.283%@5, 0.287%@10, 0.274%@20, Recall: 0.088%@5, 0.197%@10, 0.350%@20, NDCG: 0.294%@5, 0.323%@10, 0.361%@20, Time: 1.314s
+BPR loss: 0.712274968624115, IPL loss: 0.000371497095329687
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 21/2000, Loss: 0.712646, Time: 4.257s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.287%@10, 0.274%@20, Recall: 0.088%@5, 0.197%@10, 0.350%@20, NDCG: 0.292%@5, 0.323%@10, 0.361%@20, Time: 1.314s
+BPR loss: 0.7122588753700256, IPL loss: 0.00037150405114516616
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 22/2000, Loss: 0.712630, Time: 4.224s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.285%@10, 0.273%@20, Recall: 0.088%@5, 0.197%@10, 0.350%@20, NDCG: 0.292%@5, 0.322%@10, 0.361%@20, Time: 1.322s
+BPR loss: 0.7120547294616699, IPL loss: 0.0003715110069606453
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 23/2000, Loss: 0.712426, Time: 4.295s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.285%@10, 0.274%@20, Recall: 0.088%@5, 0.197%@10, 0.350%@20, NDCG: 0.292%@5, 0.322%@10, 0.362%@20, Time: 1.337s
+BPR loss: 0.7119825482368469, IPL loss: 0.00037151799187995493
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 24/2000, Loss: 0.712354, Time: 4.195s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.285%@10, 0.274%@20, Recall: 0.088%@5, 0.197%@10, 0.350%@20, NDCG: 0.292%@5, 0.322%@10, 0.362%@20, Time: 1.357s
+BPR loss: 0.7119297385215759, IPL loss: 0.0003715249476954341
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 25/2000, Loss: 0.712301, Time: 4.262s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.285%@10, 0.275%@20, Recall: 0.088%@5, 0.199%@10, 0.351%@20, NDCG: 0.298%@5, 0.328%@10, 0.368%@20, Time: 1.318s
+BPR loss: 0.7119680047035217, IPL loss: 0.0003715318744070828
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 26/2000, Loss: 0.712340, Time: 4.146s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.287%@10, 0.275%@20, Recall: 0.088%@5, 0.199%@10, 0.351%@20, NDCG: 0.298%@5, 0.329%@10, 0.368%@20, Time: 1.320s
+BPR loss: 0.7118405699729919, IPL loss: 0.00037153883022256196
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 27/2000, Loss: 0.712212, Time: 4.209s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.283%@5, 0.287%@10, 0.274%@20, Recall: 0.089%@5, 0.199%@10, 0.351%@20, NDCG: 0.300%@5, 0.329%@10, 0.368%@20, Time: 1.351s
+Best NDCG, save model to checkpoints/mook/MF_IPLBPRTrainer_ml20m_0.000100_0.010000_0.000100.pth
+BPR loss: 0.7116738557815552, IPL loss: 0.00037154575693421066
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 28/2000, Loss: 0.712045, Time: 4.257s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.283%@5, 0.287%@10, 0.273%@20, Recall: 0.089%@5, 0.199%@10, 0.350%@20, NDCG: 0.300%@5, 0.329%@10, 0.367%@20, Time: 1.311s
+BPR loss: 0.7116647958755493, IPL loss: 0.0003715527127496898
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 29/2000, Loss: 0.712036, Time: 4.294s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.283%@5, 0.287%@10, 0.274%@20, Recall: 0.089%@5, 0.199%@10, 0.350%@20, NDCG: 0.300%@5, 0.329%@10, 0.368%@20, Time: 1.330s
+Best NDCG, save model to checkpoints/mook/MF_IPLBPRTrainer_ml20m_0.000100_0.010000_0.000100.pth
+BPR loss: 0.7115563750267029, IPL loss: 0.0003715596394613385
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 30/2000, Loss: 0.711928, Time: 4.288s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.283%@5, 0.287%@10, 0.274%@20, Recall: 0.089%@5, 0.199%@10, 0.350%@20, NDCG: 0.300%@5, 0.329%@10, 0.368%@20, Time: 1.329s
+BPR loss: 0.7115377187728882, IPL loss: 0.0003715665661729872
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 31/2000, Loss: 0.711909, Time: 4.201s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.283%@5, 0.287%@10, 0.275%@20, Recall: 0.089%@5, 0.199%@10, 0.350%@20, NDCG: 0.300%@5, 0.329%@10, 0.368%@20, Time: 1.333s
+BPR loss: 0.7114051580429077, IPL loss: 0.00037157346378080547
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 32/2000, Loss: 0.711777, Time: 4.206s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.285%@10, 0.275%@20, Recall: 0.089%@5, 0.198%@10, 0.350%@20, NDCG: 0.299%@5, 0.328%@10, 0.368%@20, Time: 1.348s
+BPR loss: 0.7113094329833984, IPL loss: 0.00037158039049245417
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 33/2000, Loss: 0.711681, Time: 4.335s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.285%@10, 0.276%@20, Recall: 0.089%@5, 0.198%@10, 0.351%@20, NDCG: 0.298%@5, 0.328%@10, 0.369%@20, Time: 1.324s
+BPR loss: 0.7112224102020264, IPL loss: 0.0003715872881002724
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 34/2000, Loss: 0.711594, Time: 4.169s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.284%@10, 0.276%@20, Recall: 0.089%@5, 0.197%@10, 0.351%@20, NDCG: 0.298%@5, 0.327%@10, 0.369%@20, Time: 1.312s
+BPR loss: 0.7111367583274841, IPL loss: 0.0003715942148119211
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 35/2000, Loss: 0.711508, Time: 4.127s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.283%@10, 0.276%@20, Recall: 0.089%@5, 0.184%@10, 0.351%@20, NDCG: 0.298%@5, 0.323%@10, 0.369%@20, Time: 1.363s
+BPR loss: 0.7111232876777649, IPL loss: 0.00037160111241973937
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 36/2000, Loss: 0.711495, Time: 4.161s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.284%@10, 0.276%@20, Recall: 0.089%@5, 0.184%@10, 0.353%@20, NDCG: 0.299%@5, 0.325%@10, 0.369%@20, Time: 1.365s
+BPR loss: 0.710950493812561, IPL loss: 0.00037160803913138807
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 37/2000, Loss: 0.711322, Time: 4.231s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.285%@10, 0.276%@20, Recall: 0.089%@5, 0.184%@10, 0.352%@20, NDCG: 0.298%@5, 0.325%@10, 0.368%@20, Time: 1.321s
+BPR loss: 0.7108473777770996, IPL loss: 0.0003716149367392063
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 38/2000, Loss: 0.711219, Time: 4.407s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.285%@10, 0.276%@20, Recall: 0.089%@5, 0.184%@10, 0.352%@20, NDCG: 0.298%@5, 0.325%@10, 0.369%@20, Time: 1.330s
+BPR loss: 0.7109242677688599, IPL loss: 0.00037162183434702456
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 39/2000, Loss: 0.711296, Time: 4.220s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.285%@10, 0.275%@20, Recall: 0.089%@5, 0.184%@10, 0.352%@20, NDCG: 0.298%@5, 0.325%@10, 0.368%@20, Time: 1.331s
+BPR loss: 0.710969865322113, IPL loss: 0.0003716287319548428
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 40/2000, Loss: 0.711341, Time: 4.134s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.284%@10, 0.276%@20, Recall: 0.089%@5, 0.182%@10, 0.355%@20, NDCG: 0.298%@5, 0.324%@10, 0.369%@20, Time: 1.330s
+BPR loss: 0.7107569575309753, IPL loss: 0.00037163562956266105
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 41/2000, Loss: 0.711129, Time: 4.260s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.283%@10, 0.276%@20, Recall: 0.089%@5, 0.180%@10, 0.355%@20, NDCG: 0.298%@5, 0.323%@10, 0.369%@20, Time: 1.334s
+BPR loss: 0.7105932831764221, IPL loss: 0.0003716425271704793
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 42/2000, Loss: 0.710965, Time: 4.208s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.283%@10, 0.276%@20, Recall: 0.088%@5, 0.180%@10, 0.349%@20, NDCG: 0.296%@5, 0.323%@10, 0.368%@20, Time: 1.329s
+BPR loss: 0.7106668949127197, IPL loss: 0.00037164942477829754
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 43/2000, Loss: 0.711039, Time: 4.410s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.284%@10, 0.276%@20, Recall: 0.088%@5, 0.194%@10, 0.350%@20, NDCG: 0.296%@5, 0.326%@10, 0.368%@20, Time: 1.345s
+BPR loss: 0.7105532288551331, IPL loss: 0.00037165629328228533
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 44/2000, Loss: 0.710925, Time: 4.156s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.283%@10, 0.276%@20, Recall: 0.088%@5, 0.194%@10, 0.349%@20, NDCG: 0.295%@5, 0.325%@10, 0.366%@20, Time: 1.332s
+BPR loss: 0.7104378938674927, IPL loss: 0.0003716631908901036
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 45/2000, Loss: 0.710810, Time: 4.193s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.283%@10, 0.276%@20, Recall: 0.089%@5, 0.194%@10, 0.349%@20, NDCG: 0.297%@5, 0.325%@10, 0.366%@20, Time: 1.320s
+BPR loss: 0.710491955280304, IPL loss: 0.00037167005939409137
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 46/2000, Loss: 0.710864, Time: 4.160s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.280%@5, 0.283%@10, 0.274%@20, Recall: 0.089%@5, 0.194%@10, 0.348%@20, NDCG: 0.297%@5, 0.325%@10, 0.365%@20, Time: 1.327s
+BPR loss: 0.7102836966514587, IPL loss: 0.00037167692789807916
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 47/2000, Loss: 0.710655, Time: 4.244s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.283%@10, 0.274%@20, Recall: 0.088%@5, 0.182%@10, 0.347%@20, NDCG: 0.295%@5, 0.322%@10, 0.365%@20, Time: 1.328s
+BPR loss: 0.7102347612380981, IPL loss: 0.0003716838255058974
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 48/2000, Loss: 0.710606, Time: 4.366s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.283%@10, 0.272%@20, Recall: 0.088%@5, 0.182%@10, 0.346%@20, NDCG: 0.292%@5, 0.321%@10, 0.364%@20, Time: 1.329s
+BPR loss: 0.7100824117660522, IPL loss: 0.0003716907522175461
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 49/2000, Loss: 0.710454, Time: 4.166s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.281%@10, 0.272%@20, Recall: 0.088%@5, 0.182%@10, 0.346%@20, NDCG: 0.292%@5, 0.320%@10, 0.363%@20, Time: 1.323s
+BPR loss: 0.7101383805274963, IPL loss: 0.0003716976207215339
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 50/2000, Loss: 0.710510, Time: 4.216s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.281%@10, 0.273%@20, Recall: 0.088%@5, 0.182%@10, 0.347%@20, NDCG: 0.292%@5, 0.320%@10, 0.364%@20, Time: 1.378s
+BPR loss: 0.7100675702095032, IPL loss: 0.0003717044892255217
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 51/2000, Loss: 0.710439, Time: 4.223s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.281%@10, 0.273%@20, Recall: 0.088%@5, 0.187%@10, 0.347%@20, NDCG: 0.292%@5, 0.320%@10, 0.363%@20, Time: 1.339s
+BPR loss: 0.7099771499633789, IPL loss: 0.0003717114159371704
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 52/2000, Loss: 0.710349, Time: 4.216s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.281%@10, 0.273%@20, Recall: 0.088%@5, 0.187%@10, 0.347%@20, NDCG: 0.292%@5, 0.319%@10, 0.363%@20, Time: 1.349s
+BPR loss: 0.7098628282546997, IPL loss: 0.0003717182844411582
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 53/2000, Loss: 0.710235, Time: 4.371s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.281%@10, 0.273%@20, Recall: 0.088%@5, 0.187%@10, 0.348%@20, NDCG: 0.292%@5, 0.319%@10, 0.363%@20, Time: 1.338s
+BPR loss: 0.7098156809806824, IPL loss: 0.0003717251820489764
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 54/2000, Loss: 0.710187, Time: 4.200s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.281%@10, 0.272%@20, Recall: 0.087%@5, 0.187%@10, 0.348%@20, NDCG: 0.289%@5, 0.319%@10, 0.362%@20, Time: 1.315s
+BPR loss: 0.7097491025924683, IPL loss: 0.00037173207965679467
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 55/2000, Loss: 0.710121, Time: 4.254s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.281%@10, 0.272%@20, Recall: 0.087%@5, 0.187%@10, 0.348%@20, NDCG: 0.289%@5, 0.319%@10, 0.362%@20, Time: 1.342s
+BPR loss: 0.7097420692443848, IPL loss: 0.0003717389772646129
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 56/2000, Loss: 0.710114, Time: 4.204s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.281%@10, 0.272%@20, Recall: 0.087%@5, 0.187%@10, 0.348%@20, NDCG: 0.288%@5, 0.318%@10, 0.361%@20, Time: 1.368s
+BPR loss: 0.7094676494598389, IPL loss: 0.00037174587487243116
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 57/2000, Loss: 0.709839, Time: 4.234s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.281%@10, 0.272%@20, Recall: 0.087%@5, 0.187%@10, 0.343%@20, NDCG: 0.288%@5, 0.318%@10, 0.360%@20, Time: 1.349s
+BPR loss: 0.7095189690589905, IPL loss: 0.0003717527724802494
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 58/2000, Loss: 0.709891, Time: 4.264s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.280%@10, 0.272%@20, Recall: 0.087%@5, 0.186%@10, 0.343%@20, NDCG: 0.288%@5, 0.317%@10, 0.360%@20, Time: 1.344s
+BPR loss: 0.7094272971153259, IPL loss: 0.0003717596991918981
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 59/2000, Loss: 0.709799, Time: 4.202s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.280%@10, 0.272%@20, Recall: 0.087%@5, 0.186%@10, 0.343%@20, NDCG: 0.288%@5, 0.317%@10, 0.360%@20, Time: 1.341s
+BPR loss: 0.7092959880828857, IPL loss: 0.00037176659679971635
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 60/2000, Loss: 0.709668, Time: 4.203s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.280%@10, 0.272%@20, Recall: 0.087%@5, 0.186%@10, 0.344%@20, NDCG: 0.288%@5, 0.317%@10, 0.360%@20, Time: 1.332s
+BPR loss: 0.7093464732170105, IPL loss: 0.0003717735526151955
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 61/2000, Loss: 0.709718, Time: 4.157s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.278%@10, 0.272%@20, Recall: 0.087%@5, 0.186%@10, 0.344%@20, NDCG: 0.289%@5, 0.317%@10, 0.360%@20, Time: 1.330s
+BPR loss: 0.7091950178146362, IPL loss: 0.0003717804793268442
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 62/2000, Loss: 0.709567, Time: 4.411s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.278%@10, 0.272%@20, Recall: 0.088%@5, 0.186%@10, 0.345%@20, NDCG: 0.289%@5, 0.317%@10, 0.361%@20, Time: 1.321s
+BPR loss: 0.7090859413146973, IPL loss: 0.0003717874060384929
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 63/2000, Loss: 0.709458, Time: 4.233s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.278%@10, 0.272%@20, Recall: 0.088%@5, 0.186%@10, 0.345%@20, NDCG: 0.289%@5, 0.317%@10, 0.361%@20, Time: 1.316s
+BPR loss: 0.7091511487960815, IPL loss: 0.0003717943618539721
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 64/2000, Loss: 0.709523, Time: 4.152s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.277%@10, 0.272%@20, Recall: 0.088%@5, 0.185%@10, 0.345%@20, NDCG: 0.289%@5, 0.316%@10, 0.361%@20, Time: 1.323s
+BPR loss: 0.7090427279472351, IPL loss: 0.0003718012885656208
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 65/2000, Loss: 0.709415, Time: 4.209s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.277%@10, 0.273%@20, Recall: 0.088%@5, 0.185%@10, 0.342%@20, NDCG: 0.288%@5, 0.316%@10, 0.360%@20, Time: 1.325s
+BPR loss: 0.7089887261390686, IPL loss: 0.00037180824438109994
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 66/2000, Loss: 0.709361, Time: 4.192s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.272%@5, 0.278%@10, 0.273%@20, Recall: 0.088%@5, 0.186%@10, 0.342%@20, NDCG: 0.288%@5, 0.318%@10, 0.361%@20, Time: 1.316s
+BPR loss: 0.7088546752929688, IPL loss: 0.00037181522930040956
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 67/2000, Loss: 0.709226, Time: 4.364s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.272%@5, 0.278%@10, 0.272%@20, Recall: 0.088%@5, 0.186%@10, 0.342%@20, NDCG: 0.288%@5, 0.318%@10, 0.361%@20, Time: 1.338s
+BPR loss: 0.7088321447372437, IPL loss: 0.0003718221851158887
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 68/2000, Loss: 0.709204, Time: 4.229s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.272%@5, 0.281%@10, 0.272%@20, Recall: 0.088%@5, 0.189%@10, 0.342%@20, NDCG: 0.288%@5, 0.319%@10, 0.360%@20, Time: 1.325s
+BPR loss: 0.7087769508361816, IPL loss: 0.00037182917003519833
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 69/2000, Loss: 0.709149, Time: 4.185s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.272%@5, 0.281%@10, 0.272%@20, Recall: 0.088%@5, 0.189%@10, 0.342%@20, NDCG: 0.288%@5, 0.319%@10, 0.360%@20, Time: 1.343s
+BPR loss: 0.7087785005569458, IPL loss: 0.00037183615495450795
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 70/2000, Loss: 0.709150, Time: 4.204s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.272%@5, 0.281%@10, 0.273%@20, Recall: 0.088%@5, 0.189%@10, 0.342%@20, NDCG: 0.288%@5, 0.319%@10, 0.361%@20, Time: 1.349s
+BPR loss: 0.7086905837059021, IPL loss: 0.00037184313987381756
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 71/2000, Loss: 0.709062, Time: 4.162s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.272%@5, 0.281%@10, 0.273%@20, Recall: 0.088%@5, 0.188%@10, 0.342%@20, NDCG: 0.288%@5, 0.319%@10, 0.361%@20, Time: 1.354s
+BPR loss: 0.7085379958152771, IPL loss: 0.0003718501247931272
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 72/2000, Loss: 0.708910, Time: 4.251s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.272%@5, 0.281%@10, 0.274%@20, Recall: 0.088%@5, 0.188%@10, 0.342%@20, NDCG: 0.288%@5, 0.319%@10, 0.361%@20, Time: 1.347s
+BPR loss: 0.7085071206092834, IPL loss: 0.0003718571097124368
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 73/2000, Loss: 0.708879, Time: 4.142s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.272%@5, 0.281%@10, 0.274%@20, Recall: 0.088%@5, 0.188%@10, 0.342%@20, NDCG: 0.288%@5, 0.320%@10, 0.362%@20, Time: 1.357s
+BPR loss: 0.7083947658538818, IPL loss: 0.00037186412373557687
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 74/2000, Loss: 0.708767, Time: 4.228s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.272%@5, 0.281%@10, 0.274%@20, Recall: 0.088%@5, 0.188%@10, 0.342%@20, NDCG: 0.288%@5, 0.320%@10, 0.361%@20, Time: 1.342s
+BPR loss: 0.7083398103713989, IPL loss: 0.0003718711668625474
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 75/2000, Loss: 0.708712, Time: 4.212s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.281%@10, 0.274%@20, Recall: 0.091%@5, 0.188%@10, 0.342%@20, NDCG: 0.292%@5, 0.320%@10, 0.362%@20, Time: 1.330s
+BPR loss: 0.7083706855773926, IPL loss: 0.00037187818088568747
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 76/2000, Loss: 0.708743, Time: 4.188s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.284%@10, 0.274%@20, Recall: 0.091%@5, 0.189%@10, 0.342%@20, NDCG: 0.292%@5, 0.322%@10, 0.362%@20, Time: 1.337s
+BPR loss: 0.7080686092376709, IPL loss: 0.000371885224012658
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 77/2000, Loss: 0.708440, Time: 4.723s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.284%@10, 0.274%@20, Recall: 0.091%@5, 0.189%@10, 0.342%@20, NDCG: 0.292%@5, 0.322%@10, 0.362%@20, Time: 1.352s
+BPR loss: 0.7081239223480225, IPL loss: 0.00037189223803579807
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 78/2000, Loss: 0.708496, Time: 4.206s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.277%@5, 0.285%@10, 0.274%@20, Recall: 0.091%@5, 0.189%@10, 0.342%@20, NDCG: 0.292%@5, 0.323%@10, 0.362%@20, Time: 1.336s
+BPR loss: 0.7080833911895752, IPL loss: 0.00037189931026659906
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Epoch 79/2000, Loss: 0.708455, Time: 4.225s
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Validation result. Precision: 0.274%@5, 0.285%@10, 0.275%@20, Recall: 0.091%@5, 0.189%@10, 0.343%@20, NDCG: 0.290%@5, 0.323%@10, 0.363%@20, Time: 1.329s
+Early stopping!
+Best Epoch: 29
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Eval result. Precision: 0.283%@5, 0.287%@10, 0.274%@20, Recall: 0.089%@5, 0.199%@10, 0.350%@20, NDCG: 0.300%@5, 0.329%@10, 0.368%@20, 
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+/home/mook/.conda/envs/rec/lib/python3.7/site-packages/sklearn/metrics/cluster/_supervised.py:65: UserWarning: Clustering metrics expects discrete values but received continuous values for label, and multiclass values for target
+  warnings.warn(msg, UserWarning)
+Test result. Precision: 0.580%@5, 0.569%@10, 0.563%@20, Recall: 0.094%@5, 0.168%@10, 0.332%@20, NDCG: 0.603%@5, 0.602%@10, 0.628%@20, 
